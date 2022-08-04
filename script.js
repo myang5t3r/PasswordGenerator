@@ -13,7 +13,7 @@ const generatePassword = ()=> {
   else{
     // Create object to store character types
     let types = {"lowercase":"",
-    "uppercase":"", "numbers":"", "Special Characters":""}
+    "uppercase":"", "numbers":"", "specialCharacters":""}
     for (let property in types){
     types[property] =prompt(`Would you like your password to contain ${property}, please answer yes or no. `)
     // make lower case incase user 
@@ -24,14 +24,22 @@ const generatePassword = ()=> {
         alert("You must enter yes or no, Sorry but you will have to start over")
         break;
       }
+      // Check if at least one character type is selected 
+      if(types.uppercase === "no"){
+        if(types.lowercase === "no"){
+          if(types.specialCharacters === "no"){
+            if(types.numbers === "no"){
+              alert("No characters selected, you must choose at least one type of character")
+            }
+          }
+        }
+      }
     }
     console.log(types)
     }
     }
-    // Check if at least one character type is selected 
-    
-
 }
+
  
    // Ask user if password should contain these
   
