@@ -1,24 +1,40 @@
 // Assignment code here
 const generatePassword = ()=> {
-  
   var passwordLength = prompt("Enter a numeric length for your password, must be between 8 and 128 characters")
-  // make into a number so we can check if the we have the right length
+  // turn into a number so we can check if the we have the right length
   passwordLength = Number(passwordLength)
   // Also check if a string was enter into the prompt
   if (Number.isNaN(passwordLength)) {
     alert("Please enter a number")
-  }
-  if(passwordLength < 8 || passwordLength > 128){
+  } 
+  else if(passwordLength < 8 || passwordLength > 128){
     alert("Password must be between 8 and 128 characters")
-    console.log(typeof passwordLength)
   }
-  // Ask user if password should contain these
-  const passwordTypes = ["lowercase", "uppercase", "numeric", "Special Characters"]
-  passwordTypes.forEach(Element =>  
-    Element = prompt() 
-    );
+  else{
+    // Create object to store character types
+    let types = {"lowercase":"",
+    "uppercase":"", "numbers":"", "Special Characters":""}
+    for (let property in passwordTypes){
+    types[property] =prompt(`Would you like your password to contain ${property}, please answer yes or no. `)
+    // make lower case incase user 
+    types[property] = types[property].toLowerCase();
+    // make sure user inputs yes or no
+    if (types[property] != "yes" ){
+      if (types[property] != "no" ){
+        alert("You must enter yes or no, Sorry but you will have to start over")
+        break;
+      }
+    }
+    console.log(passwordTypes)
+    }
+    }
+    // Check if at least one character type is selected 
+
 
 }
+ 
+   // Ask user if password should contain these
+  
 
 
 // Get references to the #generate element
