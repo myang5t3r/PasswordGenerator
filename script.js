@@ -7,7 +7,7 @@ const generatePassword = ()=> {
   var specicalCharacters = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~"; 
   var char ="";
   var password = "";
-  var passwordLength = prompt("Enter a numeric length for your password, must be between 8 and 128 characters")
+  var passwordLength = prompt("Enter a length for your password, must be between 8 and 128 characters")
   // Create object to store character types
   const types = {"lowercase":"",
   "uppercase":"", "numbers":"", "specialCharacters":""};
@@ -22,7 +22,7 @@ const generatePassword = ()=> {
   }
   else{
     for (let property in types){
-    types[property] =prompt(`Would you like your password to contain ${property}, please answer yes or no. `)
+    types[property] =prompt(`Would you like your password to contain ${property} characters, please answer yes or no. `)
     // make lower case incase user 
     types[property] = types[property].toLowerCase();
     // make sure user inputs yes or no
