@@ -14,7 +14,7 @@ const generatePassword = ()=> {
     // Create object to store character types
     let types = {"lowercase":"",
     "uppercase":"", "numbers":"", "Special Characters":""}
-    for (let property in passwordTypes){
+    for (let property in types){
     types[property] =prompt(`Would you like your password to contain ${property}, please answer yes or no. `)
     // make lower case incase user 
     types[property] = types[property].toLowerCase();
@@ -25,11 +25,11 @@ const generatePassword = ()=> {
         break;
       }
     }
-    console.log(passwordTypes)
+    console.log(types)
     }
     }
     // Check if at least one character type is selected 
-
+    
 
 }
  
