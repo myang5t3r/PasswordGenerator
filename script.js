@@ -1,21 +1,15 @@
 // Assignment code here
 const generatePassword = ()=> {
   // Global variables
-  var charArray = [
-    (lowercase = "abcdefghijklmnopqrstuvwxyz"),
-    (uppercase ="ABCDEFGHIJKLMNOPWXYZ"),
-    (numbers = "0123456789"), 
-    (specicalCharacters = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~") 
-    ];
+    // Create object to store boolean and character types
+    const types = {
+      "lowercase":["","abcdefghijklmnopqrstuvwxyz"],
+      "uppercase":["","ABCDEFGHIJKLMNOPWXYZ"], 
+      "numbers":["","0123456789"], 
+      "specialCharacters":["","!#$%&()*+,-./:;<=>?@[\]^_`{|}~"]
+    };
   var char ="";
   var password = "";
-  // Create object to store boolean for character types
-  const types = {
-    "lowercase":"",
-    "uppercase":"", 
-    "numbers":"", 
-    "specialCharacters":"",
-  };
   var passwordLength = prompt("Enter a length for your password, must be between 8 and 128 characters")
   // turn into a number so we can check if the we have the right length
   passwordLength = Number(passwordLength);
@@ -28,21 +22,18 @@ const generatePassword = ()=> {
   }
   else{
     for (let property in types){
-    types[property] =confirm(`Would you like your password to contain ${property} characters`)
+    types[property][0] =confirm(`Would you like your password to contain ${property} characters`)
     }
-    if ( types.lowercase || types.numbers || types.specialCharacters || types.uppercase === true){
+    if ( types.lowercase[0] || types.numbers[0] || types.specialCharacters[0] || types.uppercase[0] === true){
       console.log("At least one yes")
     }else {
         alert("No character selected")
     }
   }
-  console.log(types)
-  // Conditions for which characters the use chose, if yes append to char string
-  for(i=0; i<charArray.length; i++){
-    console.log(Object.values(types)[i])
-    if(Object.values(types)[i]===true){
-        char = char.concat(charArray[i])
-        console.log(charArray[i])
+  // Conditions for which characters the use chose, if true append to char string
+  for(i=0; i < Object.values(types).length; i++){
+    if(Object.values(types)[i][0]===true){
+        char = char.concat(Object.values(types)[i][1])
     }
   }
   // https://dev.to/code_mystery/random-password-generator-using-javascript-6a
