@@ -24,7 +24,8 @@ const generatePassword = ()=> {
     for (let property in types){
     types[property][0] =confirm(`Would you like your password to contain ${property} characters`)
     }
-    if ( types.lowercase[0] || types.numbers[0] || types.specialCharacters[0] || types.uppercase[0] === true){
+    if ( types.lowercase[0] || types.numbers[0] || types.specialCharacters[0] || 
+      types.uppercase[0] === true){
       console.log("At least one yes")
     }else {
         alert("No character selected")
