@@ -30,7 +30,7 @@ const generatePassword = ()=> {
         alert("No character selected")
     }
   }
-  // Conditions for which characters the use chose, if true append to char string
+  // Conditions for which characters the use, if true append to char string
   for(i=0; i < Object.values(types).length; i++){
     if(Object.values(types)[i][0]===true){
         char = char.concat(Object.values(types)[i][1])
@@ -42,7 +42,6 @@ const generatePassword = ()=> {
     var randomNumber = Math.floor(Math.random() * char.length);
     password += char.substring(randomNumber, randomNumber +1);
    }
-
    return password;
 }
 // Get references to the #generate element
@@ -51,9 +50,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
