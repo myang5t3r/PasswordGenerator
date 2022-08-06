@@ -19,4 +19,6 @@ Everyone is welcome to generate a random password. 😁
 <br>
 ![Webpage snapshot](./assets/images/site_img.PNG)
 
+## Credits
 
+The starter code can be found here: [Xandromus](https://github.com/coding-boot-camp/friendly-parakeet)
