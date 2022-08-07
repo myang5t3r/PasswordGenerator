@@ -39,7 +39,7 @@ const generatePassword = ()=> {
   }
   // https://dev.to/code_mystery/random-password-generator-using-javascript-6a
   // Generate password
-  for (var i = 0; i <= passwordLength; i++) {
+  for (var i = 0; i < passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * char.length);
     password += char.substring(randomNumber, randomNumber +1);
    }
